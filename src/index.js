@@ -15,17 +15,14 @@ const port = process.env.PORT
 // Aplicação dispónivel na pasta 'projects'
 
 // Criando a rota para GET na raiz do servidor
-app.get('/', function (request, response) {
+app.get('/projects', function (request, response) {
     // Send com text/plain
     // return response.send('Olá mundo!')
     // Send com JSon
-    return response.json({
-        mensagem: 'Olá, seja bem vindo',
-        nome: 'Christian',
-        sobrenome: 'Cebrian',
-        idade: 38,
-        cpf: '00011122255'
-    })
+    return response.json([
+        'Projeto 1',
+        'Projeto 2'
+    ])
 })
 
 // Criando a escuta
