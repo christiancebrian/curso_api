@@ -23,7 +23,8 @@ app.get('/', function (request, response) {
         mensagem: 'Olá, seja bem vindo',
         nome: 'Christian',
         sobrenome: 'Cebrian',
-        idade: 38
+        idade: 38,
+        cpf: '00011122255'
     })
 })
 
