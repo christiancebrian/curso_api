@@ -10,12 +10,30 @@ app.use(express.json())
 const port = process.env.PORT
 // Array com valores enviados
 const projects = []
+// Função Log de acesso as rotas, isso é um Middlewares
+function logRoutes(request, response, next) {
+    // Pegando dados dos parametros do request
+    const { method, url } = request
+    // console.log(request)
+    // Para Registrar no log a informação do método e url utilizados
+    const route = `[${method.toUpperCase()} ${url}]`
+    console.log(route)
+    // Para dar continuidade as funções abaixo
+    return next()
+}
 
+// Chamando a função Middleware LOG
+// Neste local a função serve para todos os métodos e rotas
+app.use(logRoutes)
+
+// Já no modelo abaixo sem a função acima, especificamos onde o Middleware vai funcionar. Está depois da rota
+// app.get('/projects', logRoutes, function (request, response) {
+//     return response.json(projects)
+// })
 
 app.get('/projects', function (request, response) {
     return response.json(projects)
 })
-
 
 app.post('/projects', function (request, response) {
     // Pegando JSON enviado de formulário no site
