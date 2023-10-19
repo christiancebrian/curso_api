@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+node_modules/
+api-vendas/node_modules/
+api-vendas/build/
+api-vendas/temp/
+api-vendas/.env
+api-vendas/coverage
+api-vendas/ormconfig.json
+api-vendas/dist
+
+api-vendas/uploads/*
+!uploads/.gitkeep
